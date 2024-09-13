@@ -86,8 +86,9 @@ All the tests are a happy path but certainly negative tests can be added as well
 
 ![alt text](src/test/resources/Cucumber Report.png)
 
-For the Performance part I considered to test only the upload pet image. 
-Since I couldn't set up my local environment but use the  https://petstore.swagger.io/#/ source, it's expected that I shouldn't try to put that server under stress but I rather demonstrate the difference when uploading distinct file sizes as follows: 
+For the Performance part I considered to test only the upload pet image. You can use the *petImage.jpg* and *petImage2.jpg* in the test resources directory. 
+
+Since I couldn't set up my local environment but use the  https://petstore.swagger.io/#/ source, it's expected that I shouldn't try to put that server under stress, but I rather demonstrate the difference when uploading distinct file sizes as follows: 
 
 ### 10 users sending 10 requests per second for 30 seconds: 
 ![alt text](src/test/resources/10 users sending 10 requests for 30 secons.png)
@@ -98,3 +99,8 @@ Since I couldn't set up my local environment but use the  https://petstore.swagg
 ### Performance when sending a 6 Mb file:
 ![alt text](src/test/resources/Performance 30 secs sending file of 6 mb.png)
 
+Due to the explanation above, it's a bit more complex to get some a success rate lower than 100% whereas if we pay attention to throughput we notice: 
+
+With the 6 Mb file we get a 36.5 per minute whereas with the 6 Kb file we get 57 per second which means 3420 per minute. 
+
+This talks more about local environment and connection but it's still useful for certain test scenarios. 
