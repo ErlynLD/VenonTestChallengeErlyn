@@ -77,3 +77,24 @@ I used JMeter v5.4 which didn't work for me using Java 17 so I ran it using Java
 > jmeter.bat
  
  JMeter file is located in *src/test/resources/PerformanceTests* and you can copy the images files it uses from *src/test/resources*
+
+# My Report
+
+For the API Test automation I was just able to prepare tests for Pets section; I tried to do some tests with different HTTP methods. There are two approaches here: one using Cucumber (the described above) and a simpler one present in PetsTests.java class.
+
+All the tests are a happy path but certainly negative tests can be added as well. Here's an image of the Cucumber report: 
+
+![alt text](src/test/resources/Cucumber Report.png)
+
+For the Performance part I considered to test only the upload pet image. 
+Since I couldn't set up my local environment but use the  https://petstore.swagger.io/#/ source, it's expected that I shouldn't try to put that server under stress but I rather demonstrate the difference when uploading distinct file sizes as follows: 
+
+### 10 users sending 10 requests per second for 30 seconds: 
+![alt text](src/test/resources/10 users sending 10 requests for 30 secons.png)
+
+### Performance when sending a 6 kb file:
+![alt text](src/test/resources/Performance 30 secs sending file of 6 kb.png)
+
+### Performance when sending a 6 Mb file:
+![alt text](src/test/resources/Performance 30 secs sending file of 6 mb.png)
+
